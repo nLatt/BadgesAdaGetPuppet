@@ -1,4 +1,7 @@
 const puppeteer = require("puppeteer");
+const dotenv = require("dotenv");
+
+dotenv.config();
 
 (async () => {
   const website = "http://vibe.adatechschool.fr/?page_id=111"
@@ -12,6 +15,6 @@ const puppeteer = require("puppeteer");
 
   await page.goto(website)
   page.click("[class=um-button]")
-  await page.$eval("#username-107", el => el.value = "Nicolas")
-  await page.$eval("#user_password-107", el => el.value = "NicolasAda2020!")
+  await page.$eval("#username-107", (el, value) => el.value = value, process.env.User)
+  await page.$eval("#user_password-107", (el, value) => el.value = value, process.env.PASSWORD)
 })();
