@@ -26,6 +26,8 @@ dotenv.config();
   const requirement_urls = await page.evaluate((...links) => {
     return links.map(e => e.href);
   }, ...links);
+  // link_urls = await page.evalute()
+  // console.log(requirement_urls);
   await write_urls(requirement_urls);
 
 })();
