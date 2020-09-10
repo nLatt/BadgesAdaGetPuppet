@@ -40,3 +40,5 @@ function write_urls(data) {
   };
   return
 };
+
+// async function get_badge()
