@@ -20,7 +20,7 @@ dotenv.config();
   await page.$eval("#user_password-107", (el, value) => el.value = value, process.env.PASSWORD);
   page.click("[class=um-button]");
 
-  console.log(data[0])
+
 })();
 
 function read_urls() {
