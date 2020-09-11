@@ -1,11 +1,10 @@
 const puppeteer = require("puppeteer");
-const cluster = require("puppeteer-cluster");
 const dotenv = require("dotenv");
 const fs = require("fs");
 dotenv.config();
 
 (async () => {
-  const website = "http://vibe.adatechschool.fr/?page_id=111";
+  const website = "http://vibe.adatechschool.fr/?page_id=53";
 
   const browser = await puppeteer.launch({
     headless: false,
@@ -44,13 +43,4 @@ function write_urls(data) {
     });
   };
   return
-};
-
-function read_urls() {
-  urls = fs.readFile("requirement_urls.csv", function(err) {
-    if (err) throw err;
-    console.log("File read!");
-  });
-  console.log(urls, "should work")
-  return urls
 };
