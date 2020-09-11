@@ -8,7 +8,6 @@ dotenv.config();
 
   const browser = await puppeteer.launch({
     headless: false,
-    devtools: true,
     slowmo: 200,
   });
 
